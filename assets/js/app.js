@@ -609,7 +609,7 @@ async function syncFromGist() {
         const file = gist.files?.['ventas_data.json'];
         if (!file?.content) throw new Error("ventas_data.json no encontrado en el Gist.");
 
-        const remote = JSON.parse(file.content);0
+        const remote = JSON.parse(file.content);
 
         if (remote.promotores) await replaceAll(STORES.PROMOTORES, remote.promotores);
         
