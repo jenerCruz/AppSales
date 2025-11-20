@@ -1,11 +1,13 @@
 // Nombre del caché
-const CACHE_NAME = "ventasapp-cache-v1";
+const CACHE_NAME = "salexpmc-v1";
 
+// Archivos obligatorios para trabajar offline
 // Archivos obligatorios para trabajar offline
 const APP_SHELL = [
   "./",
   "./index.html",
   "./manifest.json",
+  "./app.js", // <-- AÑA
 
   // CSS
   "./assets/css/tailwind.min.css",
