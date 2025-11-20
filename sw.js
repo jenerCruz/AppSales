@@ -1,5 +1,5 @@
 // Nombre del caché
-const CACHE_NAME = "ventasapp-cache-v1";
+const CACHE_NAME = "ventasapp-cache-v2";
 
 // Archivos obligatorios para trabajar offline
 const APP_SHELL = [
