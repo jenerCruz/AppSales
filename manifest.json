@@ -1,5 +1,5 @@
 {
-  "name": "Panel de Ventas y Metas",
+  "name": "ventas App - cache-v2",
   "short_name": "VentasApp",
   "description": "PWA para registro de ventas, metas, promotores y dashboard.",
   "start_url": "./index.html",
