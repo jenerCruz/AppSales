@@ -609,12 +609,18 @@ async function syncFromGist() {
         const file = gist.files?.['ventas_data.json'];
         if (!file?.content) throw new Error("ventas_data.json no encontrado en el Gist.");
 
-        const remote = JSON.parse(file.content);
+        const remote = JSON.parse(file.content);0
 
         if (remote.promotores) await replaceAll(STORES.PROMOTORES, remote.promotores);
-        if (remote.metas)       await replaceAll(STORES.METAS, remote.metas);
+        
+        // --- CAMBIO CLAVE AQUÍ: APLICAR FILTRO DE UNICIDAD ---
+        if (remote.metas) {
+            const cleanedMetas = uniqueMetas(remote.metas); // <-- Filtra duplicados
+            await replaceAll(STORES.METAS, cleanedMetas);
+        }
+        
         if (remote.ventas)      await replaceAll(STORES.VENTAS, remote.ventas);
-
+        // --- FIN DEL CAMBIO ---
         showToast("Sincronización completada.");
         startApp();
 
