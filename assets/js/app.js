@@ -535,6 +535,25 @@ function mergeArrays(remoteArr = [], localArr = []) {
 
     return Array.from(map.values());
 }
+/* ============================================================
+   NUEVA UTILIDAD: Eliminar Duplicados de Metas
+   ============================================================ */
+function uniqueMetas(metas) {
+    const uniqueKeys = new Set();
+    return metas.filter(meta => {
+        // La clave de unicidad que definiste en IndexedDB
+        const key = `${meta.mes}|${meta.sucursal}|${meta.producto}`; 
+        if (uniqueKeys.has(key)) {
+            // El registro es un duplicado, lo filtramos (eliminamos)
+            return false; 
+        } else {
+            // Es un registro único, lo conservamos
+            uniqueKeys.add(key);
+            return true;
+        }
+    });
+}
+
 
 /* ============================================================
    CONFIG + SINCRONIZACIÓN GIST
