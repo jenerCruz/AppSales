@@ -1,5 +1,0 @@
-// Simulación de subida a MEGA
-window.megaUpload = async function(data) {
-    console.log("Simulación de subida a MEGA", data);
-    return { success: true, remoteId: uuidv4() };
-};
