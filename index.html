@@ -304,6 +304,8 @@ let donutChartInstance = null;
    INICIALIZACIÓN APP
    =========================================================== */
 window.addEventListener("load", () => {
+  setTodayDate();
+  setupTabListeners();
   initDB();
   // Modal: cierre seguro
   const msgModal = document.getElementById('message-modal');
